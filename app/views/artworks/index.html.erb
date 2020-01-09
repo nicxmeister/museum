@@ -1,54 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<div class="title">
 <h1>Artworks</h1>
+</div>
 
-<table>
-  
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <div class="container-fluid">
-    <div class="row-fluid">
-    <div class="span12">
-    <% @artworks.each do |artwork| %>
-      <tr>
 
-          <div class="box">
-           <div class="card">
-              <div class="imgBx">
-                <img src="<%= artwork.image%>" alt="images">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-md-3">
+
+      <% @artworks.each do |artwork| %>
+
+        <div class="col mb-4" style="width: 50%">
+            <div class="card h-100">
+            <img src="<%= artwork.image%>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= artwork.title %></h5>
+                <p class="card-text"><%= artwork.description %>, <%= artwork.date %>, <%= artwork.author %></p>
+                <a class="show-button" href=# class="btn btn-primary"><%= link_to 'Show', artwork %></a>
+                <a class="edit-button" href=# class="btn btn-primary"><%= link_to 'Edit', edit_artwork_path(artwork) %></a>
+                <a class="destroy-button" href=# class="btn btn-primary"><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></a>
               </div>
-                <div class="details">
-                  <h2><%= artwork.title %><br><span><%= artwork.author %>, <%= artwork.date %>, <%= artwork.description %></span></h2>
-                </div>
             </div>
-          </div>
-
-       
-
-
-        <td><%= artwork.title %></td>
-        <td><%= artwork.author %></td>
-        <td><%= artwork.date %></td>
-        <td><%= artwork.description %></td>
-        <td><img src= "<%= artwork.image%>"max width=50%></td>
-        <td><%= link_to 'Show', artwork %></td>
-        <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-        <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 <br>
 
 <%= link_to 'New Artwork', new_artwork_path %>
