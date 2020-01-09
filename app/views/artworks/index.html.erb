@@ -16,13 +16,24 @@
   </thead>
 
   <tbody>
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span12">
     <% @artworks.each do |artwork| %>
       <tr>
 
-        <div class="container">
-          <img src="<%= artwork.image%>" alt="art" style="width:50%;">
-            <div class="title"><%= artwork.title %></div>
-        </div>
+          <div class="box">
+           <div class="card">
+              <div class="imgBx">
+                <img src="<%= artwork.image%>" alt="images">
+              </div>
+                <div class="details">
+                  <h2><%= artwork.title %><br><span><%= artwork.author %>, <%= artwork.date %>, <%= artwork.description %></span></h2>
+                </div>
+            </div>
+          </div>
+
+       
 
 
         <td><%= artwork.title %></td>
