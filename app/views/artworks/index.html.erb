@@ -13,11 +13,11 @@
       <% @artworks.each do |artwork| %>
 
         <div class="col mb-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card hvr-grow-shadow" style="width: 18rem;">
               <img src="<%= artwork.image%>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><%= artwork.title %></h5>
-                <p class="card-text"><%= artwork.description %>, <%= artwork.date %>, <%= artwork.author %></p>
+                <p class="card-text"><%= artwork.description %>, <%= artwork.date %>, <h2> <%= artwork.author %></h2></p>
                 <a class="show-button" href=# class="btn btn-primary"><%= link_to 'Show', artwork %></a>
                 <a class="edit-button" href=# class="btn btn-primary"><%= link_to 'Edit', edit_artwork_path(artwork) %></a>
                 <a class="destroy-button" href=# class="btn btn-primary"><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></a>
