@@ -40,7 +40,6 @@ body{
     display: flex;
     justify-content:center;
     align-items: center;
-    min-height: 100vh;
     background: #212121;
     font-family: sans-serif;
   }
@@ -50,6 +49,8 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }
   .card{
     position: relative;
