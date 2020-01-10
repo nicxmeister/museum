@@ -79,6 +79,27 @@ p {
 	font-weight: bold;
 }
 
+.card-show {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        margin-top: 20px;
+
+}
+
+.back {
+	display: flex;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+.edit {
+	display: flex;
+	justify-content: center;
+	margin-left: 10px;
+}
+
 .hvr-grow-shadow {
   display: inline-block;
   vertical-align: middle;

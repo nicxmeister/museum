@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @artwork.title %>
-</p>
+<h1><%= @artwork.title %></h1>
 
-<p>
-  <strong>Date:</strong>
-  <%= @artwork.date %>
-</p>
+<div class="card card-show" style="width: 30rem;">
+  <img src="<%= @artwork.image %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"><%= @artwork.description %>, <%= @artwork.date %> <h2><%= @artwork.author %></h2></p>
+  </div>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @artwork.author %>
-</p>
+  <div class="back">
+    <h3><%= link_to 'Back', artworks_path %></h3>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @artwork.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @artwork.image %>
-</p>
-
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+  <div class="edit">
+    <h3><%= link_to 'Edit', edit_artwork_path(@artwork) %></h3>
+  </div>

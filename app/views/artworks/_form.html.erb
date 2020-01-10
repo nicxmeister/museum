@@ -1,42 +1,16 @@
-<%= form_with(model: artwork, local: true) do |form| %>
-  <% if artwork.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
+<%= simple_form_for @artwork do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <ul>
-      <% artwork.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <h2><%= f.input :title %></h2>
+    <h2><%= f.input :date %></h2>
+    <h2><%= f.input :author %></h2>
+    <h2><%= f.input :description %></h2>
+   <h2><%= f.input :image %></h2>
+  </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.number_field :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="form-actions">
+    <%= f.button :submit %></h2>
+  </div>
 <% end %>
